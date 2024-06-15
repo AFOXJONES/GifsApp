@@ -1,5 +1,7 @@
 
 
 <div class="d-flex justify-content-center">
-  <img [src]="url" [alt]="alt" class="card-img-top">
+  <img [src]="url" [alt]="alt" class="card-img-top" (load)="onLoad()" [ngStyle]="{display: hasLoaded ? '' : 'none'}">
+
+  <img *ngIf="!hasLoaded" src="assets/loader.svg" alt="" class="mt-3">
 </div>
